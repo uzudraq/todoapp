@@ -1,5 +1,14 @@
 #case_switch and try except- for error handling
 
+def get_open():
+    with open('files/todos.txt', 'r') as file:
+        todos = file.readlines()
+        
+    return todos
+def get_write():
+    with open('files/todos.txt','w') as file:
+        todos = file.writelines(todos)
+    
 while True:
     user_action = input("Type add, show, edit,complete or exit: ")
     user_action = user_action.strip()
@@ -7,9 +16,7 @@ while True:
     if 'add' in user_action:
         todo = user_action[4:]
 
-        with open('files/todos.txt', 'r') as file:
-            todos = file.readlines()  # readlines() -- 'list'
-            # readline() -- 'str'
+        todos = get_open()'
 
         todos.append(todo)
 
@@ -17,8 +24,7 @@ while True:
             file.writelines(todos)
 
     elif 'show' in user_action:
-        with open('files/todos.txt', 'r') as file:
-            todos = file.readlines()
+        todos = get_open()
 
         for index, item in enumerate(todos):
             item = item.strip('\n')
@@ -31,8 +37,7 @@ while True:
         print(number)
         number = number - 1
 
-        with open("files/todos.txt", 'r') as file:
-            todos = file.readlines()
+        todos = get_open()
 
         # print("You want to edit this todo:- ", todos[number])
         new_todo = input("Enter new todo: ")
@@ -44,9 +49,8 @@ while True:
 
     elif 'complete' in user_action:
         number = int(user_action[9:])
-
-        with open("files/todos.txt", 'r') as file:
-            todos = file.readlines()
+        
+        todos = get_open()
 
         index = number - 1
         todo_to_remove = todos[index].strip('\n')
