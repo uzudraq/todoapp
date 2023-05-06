@@ -5,9 +5,9 @@ def get_open():
         todos = file.readlines()
         
     return todos
-def get_write():
-    with open('files/todos.txt','w') as file:
-        todos = file.writelines(todos)
+# def get_write():
+#     with open('files/todos.txt','w') as file:
+#         todos = file.writelines(todos)
     
 while True:
     user_action = input("Type add, show, edit,complete or exit: ")
