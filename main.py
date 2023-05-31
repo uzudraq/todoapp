@@ -1,11 +1,11 @@
-#case_switch and try except- for error handling
 
-def get_open():
+
+def get_open(todo_arg,filepath="files/todo.txt"):
     with open('files/todos.txt', 'r') as file:
         todos = file.readlines()
         
     return todos
-# def get_write():
+# def get_write(todo_arg,filepath="files/todo.txt"):
 #     with open('files/todos.txt','w') as file:
 #         todos = file.writelines(todos)
     
