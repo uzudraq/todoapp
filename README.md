@@ -1,3 +1,3 @@
 # todoapp
 A GUI TodoApp
-made using PyQt6
+made using PySimpleGUI
